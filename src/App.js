@@ -1,16 +1,23 @@
-import "./App.css"
-import Square from "./component/Square/Square"
-import Profile from "./component/Profil/Profil"
+import { useState, useEffect } from "react";
+import "./App.css";
+import Profile from "./component/Profil/Profil";
+
+function useTime(){
+  const [time, setTime] = useState(() => new Date());
+  useEffect(() => {
+  const id = setInterval(() => {
+      setTime(new Date());
+  },1000);
+  return () => clearInterval(id);
+  },[]);
+  return time;
+}
 
 export default function App() {
-
-  return (
-    <div className="App">
-      <Square />
-      <h1>Amazing scientists</h1>
-      <Profile/>
-      <Profile/>
-      <Profile/>
-    </div>
-  )
+    const time = useTime();
+      return(
+        <div>
+           <Profile />
+        </div>
+    );
 }
