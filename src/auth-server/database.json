@@ -1,3 +1,12 @@
 {
-    "users": []
+    "users": [
+      {
+        "email": "kumar@draft.dev",
+        "password": "$2b$10$XccSsh0YszxUYbWWHQZZfeGH87YSE3pP7G4uFQyLFsELaeOLGdBO."
+      },
+      {
+        "email": "hey@assia.me",
+        "password": "123456789start"
+      }
+    ]
 }
